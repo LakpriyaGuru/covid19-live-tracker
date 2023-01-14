@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="theme-color" content="#fff" />
+
+	<title>Covid-19 Sri Lanka | Just another Live Situational Analysis Dashboard of Sri Lanka</title>
+
+	<link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="imgapple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+	<link rel="manifest" href="img/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+	<style type="text/css">
+		@font-face {
+			font-family: Google Sans;
+			src: url('GoogleSans-Regular.ttf');
+		}
+
+		body{
+			font-family: 'Google Sans';
+			background: #252525;
+		}
+
+		h1, h2, h3, p, tt{
+			color: #fff;
+      		font-family: Google Sans;
+      	}
+
+	    p{
+	    	text-align: center;
+	    }
+
+	    dt, dd{
+			color: #fff;
+			text-align: center;
+		}
+
+		.category{
+			color: #fff;
+			font-size: 20px;
+		}
+
+		.number{
+			color: #fff;
+			font-size: 16px;
+		}
+
+		.card{
+			width: 90%;
+			height: 200px;
+			padding: 20px;
+			margin: 20px;
+			border-radius: 20px;
+			background: #000;
+			text-align: center;
+			align-content: center;
+			box-sizing: border-box;
+			box-shadow: 5px 5px 5px #000000;
+		}
+
+		.fa{
+			color: #fff;
+			text-shadow: 2px 2px 2px #000000;
+		}
+
+		.fa-circle{
+			animation: blink 1.5s infinite;
+		}
+
+		.plus{
+			color: #fff;
+			text-align: center;
+		}
+
+		@keyframes blink{
+  			0%{color: transparent;}
+			50%{color: #ff0000;}
+  			100%{color: transparent;}
+		}
+
+		@media screen and (max-width: 4320px) {
+			.w3-col {
+		    	width: 20%;
+		    }
+
+		    
+		}
+
+		@media screen and (max-width: 871px){
+		    .w3-col{
+		        width: 90%;
+		        text-align: center;
+		    }
+
+		    .w3-third{
+		    	width: 90%;
+		        text-align: center;
+		    }
+
+		    #footer{
+		    	width: 100%;
+		    }
+
+		    .card{
+		    	width: 100%;
+		    }
+
+		    h2{
+		    	text-align: center;
+		    }
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+	<div class="w3-header">
+		<h1 style="text-align: center;">Covid-19 Sri Lanka</h1>
+    	<h3 style="text-align: center;"><i class="fa fa-circle"></i> Live <i>Covid-19 Outbreak</i> Analysis Dashboard of Sri Lanka</h3>
+	</div>
+
+	<center><hr align="center" width="95%"></center>
+
+  	<h2 style="margin: 0px 0px 0px 20px;">Total Figures - Sri Lanka</h1>
+
+	<div class="w3-row">
+		<div class="w3-col">
+			<div class="card" style="background: rgb(255, 143, 47);">
+				<i class="fa fa-ambulance fa-4x"></i>
+				<div class="category">Total Cases</div>
+				<div class="number" id="local-total-cases">...</div>
+				<div class="plus">+</div>
+				<div class="number"><span id="local-new-cases">...</span> Today</div>
+			</div>
+		</div>
+		<div class="w3-col">
+			<div class="card" style="background: rgb(255, 143, 47);">
+				<i class="fa fa-heartbeat fa-4x"></i>
+				<div class="category">Active Cases</div>
+    			<div class="number" id="active-active-cases">...</div>
+			</div>
+		</div>
+		<div class="w3-col">
+			<div class="card" style="background: rgb(82, 196, 26);">
+				<i class="fa fa-check-square-o fa-4x"></i>
+				<div class="category">Recovered</div>
+				<div class="number" id="local-recovered">...</div>
+			</div>
+		</div>
+		<div class="w3-col">
+			<div class="card" style="background: rgb(255, 77, 59);">
+				<i class="fa fa-bed fa-4x"></i>
+				<div class="category">Deaths</div>
+				<div class="number" id="local-deaths">...</div>
+				<div class="plus">+</div>
+				<div class="number"><span id="local-new-deaths">...</span> Today</div>
+			</div>
+		</div>
+		<div class="w3-col">
+			<div class="card" style="background: rgb(255, 143, 47);">
+				<i class="fa fa-stethoscope fa-4x"></i>
+				<div class="category">Hospitalized</div>
+				<div class="number" id="local-total-number-of-individuals-in-hospitals">...</div>
+			</div>
+		</div>
+	</div>
+
+	<center><hr align="center" width="95%"></center>
+
+	<h2 style="margin: 0px 0px 0px 20px;">Total Figures - Global</h1>
+
+	<div class="w3-row">
+
+		<div class="w3-third">
+			<div class="card" style="background: rgb(255, 143, 47);">
+				<i class="fa fa-ambulance fa-4x"></i>
+				<div class="category">Total Cases</div>
+				<div class="number" id="global-total-cases">...</div>
+				<div class="plus">+</div>
+				<div class="number"><span id="global-new-cases">...</span> Today</div>
+			</div>
+		</div>
+
+		<div class="w3-third">
+			<div class="card" style="background: rgb(82, 196, 26);">
+				<i class="fa fa-check-square-o fa-4x"></i>
+				<div class="category">Recovered</div>
+				<div class="number" id="global-recovered">...</div>
+			</div>
+		</div>
+
+		<div class="w3-third">
+			<div class="card" style="background: rgb(255, 77, 59);">
+				<i class="fa fa-bed fa-4x"></i>
+				<div class="category">Deaths</div>
+				<div class="number" id="global-deaths">...</div>
+				<div class="plus">+</div>
+				<div class="number"><span id="global-new-deaths">...</span> Today</div>
+			</div>
+		</div>
+
+	</div>
+
+<center><hr align="center" width="95%"></center>
+
+
+<!--p id="cumulative-local"></p>
+<p id="cumulative-foreign"></p>
+<p id="treatment-local"></p>
+<p id="treatment-foreign"></p>
+<p id="last-updated"></p-->
+
+
+
+
+  <!--a class="twitter-timeline" href="https://twitter.com/HPBSriLanka?ref_src=twsrc%5Etfw">Tweets by HPBSriLanka</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script-->
+
+<div class="w3-footer">
+	<div class="w3-container">
+		<div class="w3-col m4" id="footer">
+				<p>Sources:</p>
+				<p><a href="http://hpb.health.gov.lk/" target="_blank">Health Promotion Bureau of Sri Lanka</a></p>
+		</div>
+
+		<div class="w3-col m4" id="footer">
+			<p style="font-style: italic;">Last Updated: <br><span id=last-updated>...</span></p>
+			<p style="font-style: italic;">New features will coming soon...</p>
+		</div>
+
+		<div class="w3-col m4" id="footer">
+				<p>Credits:</p>
+				<p>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
+				<p><a href="http://fontawesome.io" target="_blank">Font Awesome</a> by Dave Gandy</p></p>
+		</div>
+	</div>
+	<center><hr align="center" width="95%"></center>
+	<p>Made with <i class="fa fa-heart" style="color: red;"></i> by <a href="https://www.lakpriya.ga" target="_blank"><span style="font-style: italic;">Laké <3</span></a></p>
+</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+
+</body>
+
+</html>
